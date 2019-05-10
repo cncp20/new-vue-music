@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 .banner {
   width: 100%;
-  height: 200px;
+  height: 30%;
   .banner-item, img {
     height: 100%;
     width: 100%;
@@ -70,10 +70,11 @@ export default {
 }
 .disk {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   .disk-item {
-    width: 33.33%;
-    height: 33.33%;
-    float: left;
+    width: 33%;
+    height: 33%;
     padding: 3px;
     box-sizing: border-box;
     img {
@@ -82,7 +83,9 @@ export default {
       border-radius: 5px;
     }
     p {
+      height: 10%;
       font-size: 10px;
+      margin-bottom: 5px; 
     }
   }
 }

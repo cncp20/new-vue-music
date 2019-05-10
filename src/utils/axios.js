@@ -2,7 +2,7 @@
  * 请求拦截、相应拦截、错误统一处理
  */
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://192.168.2.3:3000';
 // 请求超时时间
 axios.defaults.timeout = 10000;
 

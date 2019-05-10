@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Recommend from './views/Recommend.vue'
+import SingerDetail from './views/SingerDetail.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -35,7 +36,11 @@ export default new Router({
     {
       path: '/singer',
       name: 'singer',
-      component: () => import('./views/Singer.vue')
+      component: () => import('./views/Singer.vue'),
+      children: [{
+        path: ':id',
+        component: SingerDetail
+      }]
     }
   ]
 })

@@ -7,7 +7,7 @@
       <span>排行榜</span>
     </router-link>
     <router-link class="tab-item" to="singer">
-      <span>歌手</span>
+      <span>热门歌手</span>
     </router-link>
   </div>
 </template>
