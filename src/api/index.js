@@ -3,5 +3,7 @@ export const recommend = {
     disk: "/personalized"
 }
 export const singer = {
-    singers: "/toplist/artist"
+    singers: "/toplist/artist",
+    songs: "/artists?id=",
+    detail: "/artist/desc?id="
 }

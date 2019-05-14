@@ -1,12 +1,46 @@
 <template>
     <div class="detail">
-{{route}}
+        <img v-lazy="artist.img1v1Url" />
     </div>
 </template>
 
 <script>
+import { getSingerDetail, getSingerSongs } from "./../api/singer";
+import { mapGetters } from "vuex";
 export default {
-
+    data() {
+        return {
+            artist: {},
+            hotSongs: []
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'singer'
+        ])
+    },
+    methods: {
+        _getDetail() {
+            getSingerDetail(this.singer).then(data => {
+                console.log(data);
+            });
+        },
+        _getSongs() {
+            getSingerSongs(this.singer).then(data => {
+                console.log(data);
+                this.artist = data.artist;
+                this.hotSongs = data.hotSongs;
+            });
+        }
+    },
+    created() {
+        if (!this.singer) {
+            this.$router.push("/singer");
+            return;
+        }
+        this._getSongs();
+        this._getDetail();
+    }
 }
 </script>
 

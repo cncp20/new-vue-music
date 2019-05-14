@@ -12,6 +12,7 @@
 
 <script>
 import { getSingers } from "./../api/singer";
+import {mapMutations} from "vuex";
 export default {
     data() {
         return {
@@ -25,8 +26,12 @@ export default {
             });
         },
         toDetail(id) {
-            this.$router.push(`/singer/${id}`)
-        }
+            this.setSinger(id)
+            this.$router.push(`/singer/${id}`);
+        },
+        ...mapMutations({
+            setSinger: "SET_SINGER"
+        })
     },
     mounted() {
         this._getSingers();
