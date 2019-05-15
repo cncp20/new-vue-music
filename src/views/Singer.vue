@@ -41,6 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .singer {
+    overflow: auto;
     ul {
         li {
             display: flex;

@@ -7,7 +7,7 @@ import VueLazyload from 'vue-lazyload';
 
 Vue.config.productionTip = false
 
-fastclick.attach(document.body);
+// fastclick.attach(document.body);
 Vue.use(VueLazyload)
 new Vue({
   router,
